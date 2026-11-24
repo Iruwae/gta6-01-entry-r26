@@ -1,0 +1,99 @@
+/* r26 — HUD stylesheet. Warm sunset palette, dark glass panels. */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#1a1024;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#fff}
+#scene{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.hidden{display:none!important}
+.panel{position:absolute;background:rgba(10,10,22,.72);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:8px 12px;backdrop-filter:blur(3px);box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.panel-title{font-size:11px;letter-spacing:.14em;color:#9fd8d0;font-weight:700;margin-bottom:4px}
+#race-panel{top:14px;left:50%;transform:translateX(-50%);text-align:center;min-width:280px;border-top:3px solid #2dd4bf}
+#race-name{font-weight:800;letter-spacing:.12em;font-size:15px}
+#race-sub{font-size:12px;color:#cfe6e2;margin-top:2px}
+#money-box{top:14px;right:16px;text-align:right;min-width:210px}
+#money{font-size:26px;font-weight:800;color:#7dffa8;text-shadow:0 0 12px rgba(60,255,140,.35)}
+#xp-bar{height:6px;background:#223;border-radius:3px;margin:5px 0 3px;overflow:hidden}
+#xp-fill{height:100%;width:64%;background:linear-gradient(90deg,#f59e0b,#fbbf24);border-radius:3px}
+#xp-line{font-size:11px;color:#fcd9a0}
+#wanted{top:96px;right:16px;font-size:20px;letter-spacing:2px;color:#ffd166}
+#weapon-panel{top:132px;right:16px;min-width:230px}
+#weapon-main{font-size:14px;display:flex;gap:8px;align-items:center}
+#weapon-icon{font-size:18px}
+#weapon-name{font-weight:700;flex:1}
+#weapon-ammo{color:#9fd8d0;font-weight:700}
+#weapon-slots{display:flex;gap:5px;margin-top:7px}
+#weapon-slots span{font-size:10px;padding:3px 6px;border-radius:5px;background:#1c2a44;color:#bcd;border:1px solid #2a3c5e}
+#weapon-slots span.on{background:#2dd4bf;color:#04221d;border-color:#2dd4bf;font-weight:700}
+#crew-chip{top:200px;right:16px;font-size:12px;line-height:1.35}
+#crew-key{color:#2dd4bf;font-weight:800}
+#crew-name{font-weight:700}
+#crew-role{color:#9fb8c8;font-size:11px}
+#dispatch-panel{top:14px;left:16px;min-width:250px}
+#dispatch-rows{font-size:12px;line-height:1.5}
+#dispatch-rows .u{display:flex;justify-content:space-between;gap:10px}
+#dispatch-rows .tactic{color:#fbbf24;font-weight:700;font-size:10px;letter-spacing:.08em}
+#dispatch-rows .dist{color:#9fd8d0}
+#mission-panel{top:150px;left:16px;max-width:280px}
+#mission-step{font-size:13px;margin-top:2px}
+#mission-next{font-size:11px;color:#9fb8c8;margin-top:4px}
+#district{right:16px;bottom:150px;text-align:right;background:transparent;border:none;box-shadow:none;padding:0}
+#district-name{font-size:34px;font-weight:800;font-style:italic;text-shadow:0 2px 14px rgba(0,0,0,.7);display:block}
+#district-street{font-size:11px;letter-spacing:.28em;color:#ffd9a0;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+#minimap-wrap{position:absolute;left:16px;bottom:16px;width:220px}
+#minimap{width:220px;height:220px;border-radius:50%;border:3px solid rgba(255,255,255,.35);box-shadow:0 0 0 4px rgba(0,0,0,.35),0 6px 24px rgba(0,0,0,.5);background:#0c1420}
+#objective-line{font-size:11px;color:#e8f4ff;text-shadow:0 1px 6px #000;margin-top:6px}
+#bars{margin-top:6px;display:flex;flex-direction:column;gap:4px}
+#bars .bar{height:8px;background:rgba(0,0,0,.55);border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,.25)}
+#bars .bar i{display:block;height:100%;background:linear-gradient(90deg,#22c55e,#4ade80)}
+#bars .bar.armour i{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
+#health-fill{width:100%}#armour-fill{width:60%}
+#dialogue{left:50%;bottom:18px;transform:translateX(-50%);width:640px;max-width:86vw;display:flex;gap:12px;align-items:center;padding:12px 16px}
+#portrait{border-radius:50%;border:2px solid #2dd4bf;flex:none;background:#234}
+#dialogue-name{color:#7dd8c8;font-size:13px;display:block;margin-bottom:2px}
+#dialogue-text{font-size:15px;line-height:1.4}
+#speedo{position:absolute;right:18px;bottom:14px;width:120px;height:120px;text-align:center}
+#speedo svg{width:120px;height:120px;transform:rotate(0deg)}
+#speedo-arc{stroke-dasharray:220;stroke-dashoffset:60}
+#speedo-num{position:absolute;top:44px;left:0;right:0;font-size:34px;font-weight:800;text-shadow:0 2px 10px #000}
+#speedo-unit{position:absolute;top:80px;left:0;right:0;font-size:10px;letter-spacing:.2em;color:#cfe6e2}
+#speedo-car{position:absolute;top:98px;left:0;right:0;font-size:10px;letter-spacing:.12em;color:#ffd9a0}
+#condition{position:absolute;top:116px;left:0;right:0;font-size:10px;color:#cfe6e2;white-space:nowrap}
+#condition-bar{display:inline-block;width:56px;height:6px;background:#223;border-radius:3px;vertical-align:middle;overflow:hidden}
+#condition-fill{display:block;height:100%;width:98.7%;background:#4ade80}
+#radio-line{position:absolute;right:160px;bottom:20px;font-size:12px;color:#ffe9c9;text-shadow:0 1px 6px #000}
+#radio-line .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#f97316;margin-right:6px;box-shadow:0 0 8px #f97316}
+#notices{position:absolute;left:50%;top:120px;transform:translateX(-50%);text-align:center;font-size:14px;font-weight:700;text-shadow:0 2px 8px #000}
+#notices div{margin-bottom:4px}
+#notices .good{color:#7dffa8}#notices .bad{color:#ff9a9a}#notices .info{color:#ffe9c9}
+#crosshair{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:26px;color:rgba(255,255,255,.85);text-shadow:0 0 6px #000}
+#title-screen{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center}
+#title-bg{position:absolute;inset:0;background:none}
+/* Judul tembus pandang: langit senja ASLI dari scene 3D yang jadi latar (s4). */
+#title-bg:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,8,40,.25),rgba(20,8,40,.62))}
+#title-inner{position:relative;text-align:center;padding:20px}
+#title-inner h1{font-size:84px;font-weight:900;letter-spacing:.06em;font-style:italic;text-shadow:0 4px 0 #7c2d12,0 10px 34px rgba(0,0,0,.8);color:#fff7ed}
+#tagline{font-size:17px;color:#ffe9c9;text-shadow:0 2px 8px #000;margin:8px 0 26px}
+#title-menu button{display:block;margin:8px auto;min-width:280px;padding:12px 22px;font-size:16px;font-weight:800;letter-spacing:.12em;color:#fff;background:rgba(10,10,26,.72);border:2px solid #2dd4bf;border-radius:10px;cursor:pointer}
+#title-menu button:hover{background:#2dd4bf;color:#04221d}
+#slots{display:flex;gap:8px;justify-content:center}
+#slots button{min-width:86px;padding:8px 10px;font-size:12px}
+#controls-line{font-size:12px;color:#dbe7ff;text-shadow:0 1px 6px #000;margin-top:18px}
+#pause-screen{position:fixed;inset:0;z-index:25;background:rgba(8,6,20,.55);display:flex;align-items:center;justify-content:center}
+#stats-panel{position:static;width:620px;max-width:92vw;max-height:88vh;overflow:auto}
+#stats-panel h2{letter-spacing:.2em;font-size:22px;margin-bottom:10px}
+#stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;font-size:14px;margin-bottom:12px}
+#stats-grid b{float:right;color:#7dffa8}
+#district-bars{font-size:12px;line-height:1.9;margin-bottom:14px}
+#district-bars .db{display:flex;gap:8px;align-items:center}
+#district-bars .db span:first-child{width:130px;color:#cfe6e2}
+#district-bars .db i{flex:1;height:8px;background:#223;border-radius:4px;overflow:hidden;display:block}
+#district-bars .db i b{display:block;height:100%;background:linear-gradient(90deg,#f59e0b,#2dd4bf)}
+#pause-menu{display:flex;gap:8px;flex-wrap:wrap}
+#pause-menu button{padding:10px 16px;font-weight:800;letter-spacing:.08em;background:#1c2a44;color:#fff;border:1px solid #2dd4bf;border-radius:8px;cursor:pointer}
+#pause-menu button:hover{background:#2dd4bf;color:#04221d}
+#loading{position:fixed;inset:0;z-index:40;background:#160a24;display:flex;align-items:center;justify-content:center}
+#loading-box{text-align:center;width:340px}
+#loading-title{font-size:34px;font-weight:900;font-style:italic;letter-spacing:.06em;margin-bottom:16px}
+#loading-bar{height:10px;background:#2a1840;border-radius:5px;overflow:hidden}
+#loading-fill{display:block;height:100%;width:4%;background:linear-gradient(90deg,#f59e0b,#2dd4bf)}
+#loading-text{font-size:12px;color:#cbb8e8;margin-top:10px}
+@media (max-width:900px){#title-inner h1{font-size:52px}#district-name{font-size:24px}#minimap-wrap{width:150px}#minimap{width:150px;height:150px}}
+

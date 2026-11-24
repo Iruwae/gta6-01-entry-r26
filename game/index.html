@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balapan Pantai &amp; Kejar Polisi</title>
+<link rel="stylesheet" href="./styles.css">
+<script type="importmap">
+{"imports":{"three":"./vendor/three.module.min.js","three/addons/":"./vendor/addons/"}}
+</script>
+</head>
+<body>
+<canvas id="scene"></canvas>
+<div id="hud" class="hidden">
+  <div id="race-panel" class="panel hidden">
+    <div id="race-name">BALAPAN SENJA</div>
+    <div id="race-sub">Gate <span id="gate-now">1</span>/5 &middot; record 78 dtk &middot; <span id="race-time">0.0</span> dtk</div>
+  </div>
+  <div id="money-box" class="panel">
+    <div id="money">Rp 9.870.000</div>
+    <div id="xp-bar"><div id="xp-fill"></div></div>
+    <div id="xp-line">Pahlawan Pantai &middot; 1900 XP</div>
+  </div>
+  <div id="wanted" class="panel hidden"></div>
+  <div id="weapon-panel" class="panel">
+    <div id="weapon-main"><span id="weapon-icon">&#128299;</span><span id="weapon-name">Pistol Kancil 9</span><span id="weapon-ammo">12 / 36</span></div>
+    <div id="weapon-slots"></div>
+  </div>
+  <div id="crew-chip" class="panel hidden"><span id="crew-key">[Z]</span> <span id="crew-name">Dimas</span><br><span id="crew-role">Getaway Car</span></div>
+  <div id="dispatch-panel" class="panel hidden">
+    <div class="panel-title">DISPATCH &mdash; POLISI SENJA</div>
+    <div id="dispatch-rows"></div>
+  </div>
+  <div id="mission-panel" class="panel">
+    <div class="panel-title" id="mission-title">BALAPAN SENJA</div>
+    <div id="mission-step">Lewati semua gate di Jl. Pantai Senja</div>
+    <div id="mission-next">Berikutnya: ketemu Dimas di coffee shop</div>
+  </div>
+  <div id="district" class="panel"><span id="district-name">Pantai Senja</span><span id="district-street">JL. PANTAI SENJA</span></div>
+  <div id="minimap-wrap"><canvas id="minimap" width="220" height="220"></canvas><div id="objective-line">&#9733; Objective &middot; <span id="objective-dist">224 m</span></div><div id="bars"><div class="bar"><i id="health-fill"></i></div><div class="bar armour"><i id="armour-fill"></i></div></div></div>
+  <div id="dialogue" class="panel hidden"><canvas id="portrait" width="64" height="64"></canvas><div><b id="dialogue-name">Dimas</b><span id="dialogue-text"></span></div></div>
+  <div id="speedo"><svg viewBox="0 0 120 120"><path d="M 15 95 A 50 50 0 1 1 105 95" fill="none" stroke="#223" stroke-width="8"/><path id="speedo-arc" d="M 15 95 A 50 50 0 1 1 105 95" fill="none" stroke="#2dd4bf" stroke-width="8" stroke-linecap="round"/></svg><div id="speedo-num">0</div><div id="speedo-unit">KM/J</div><div id="speedo-car">RAJAWALI GT</div><div id="condition">KONDISI <span id="condition-bar"><i id="condition-fill"></i></span> <span id="condition-num">98.7</span></div></div>
+  <div id="radio-line"><span class="dot"></span><span id="radio-text">Gelombang Dangdut 98.7 &middot; Dusk for Two &mdash; DJ Yuyun</span></div>
+  <div id="notices"></div>
+  <div id="crosshair" class="hidden">+</div>
+</div>
+<div id="title-screen">
+  <div id="title-bg"></div>
+  <div id="title-inner">
+    <p id="tagline">Balapan pantai, kejar polisi, dan satu kota yang tidak pernah tidur.</p>
+    <div id="title-menu">
+      <button data-act="new">NEW GAME</button>
+      <button data-act="continue">CONTINUE</button>
+      <div id="slots"><button data-slot="1">SLOT 1</button><button data-slot="2">SLOT 2</button><button data-slot="3">SLOT 3</button></div>
+    </div>
+    <p id="controls-line">WASD jalan / nyetir &middot; E masuk mobil &middot; F pukul &middot; klik kiri tembak &middot; 1-5 senjata &middot; Q radio &middot; Esc jeda</p>
+  </div>
+</div>
+<div id="pause-screen" class="hidden">
+  <div id="stats-panel" class="panel">
+    <h2>STATS</h2>
+    <div id="stats-grid"></div>
+    <div id="district-bars"></div>
+    <div id="pause-menu"><button data-act="resume">RESUME</button><button data-act="garage">GARAGE SHOP</button><button data-act="save">SAVE</button><button data-act="quit">QUIT TO TITLE</button></div>
+  </div>
+</div>
+<div id="loading"><div id="loading-box"><div id="loading-title">MEMUAT KOTA</div><div id="loading-bar"><i id="loading-fill"></i></div><div id="loading-text">Memuat kota&hellip;</div></div></div>
+<script type="module" src="./src/main.js"></script>
+<!-- r26: mobil rally GLB asli, HDRI senja, pohon jacaranda pangkas. -->
+</body>
+</html>
